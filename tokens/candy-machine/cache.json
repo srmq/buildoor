@@ -1,0 +1,49 @@
+{
+  "program": {
+    "candyMachine": "9LJoco7dEUkLMrokAysoNQoKDpeqgzJjfcfkgdEb2Ewv",
+    "candyMachineCreator": "8aHhanTjFwmQpVi5CwdvCHBHPxbK6Dn8soiyjqYTfvb2",
+    "collectionMint": ""
+  },
+  "items": {
+    "0": {
+      "name": "Buildoor #1",
+      "image_hash": "3179dc0ea6e67e8331b95145a5b6b8c8ea7164c71b4d8aaa3a83bf80812e591c",
+      "image_link": "https://arweave.net/YYbJk7aAGya0JDtcJZammQalDgceXX9-7b9zQysxupQ?ext=png",
+      "metadata_hash": "9287ec3629881adce889043e56b844a8dc5a3295d885376824c4df5c31532c59",
+      "metadata_link": "https://arweave.net/2bhwa5fdb0n_Jc6Np4xUcLD5fJljk2qhc3Kj1j4gpZw",
+      "onChain": true
+    },
+    "1": {
+      "name": "Buildoor #2",
+      "image_hash": "59b9166c9704dc78b1010d895a943e4014f24629a3cd3843c783a792a434ed4a",
+      "image_link": "https://arweave.net/dJpOZVkYB7JYlJOn70f9r6USpXKB9RPLZeI8XmJpUf0?ext=png",
+      "metadata_hash": "c8d04d4ae83c037842ab0aa8f477309c3bbf78f88eee2057acce1d2c25db1115",
+      "metadata_link": "https://arweave.net/CrEydTlDhSHdtEeelKVw1AP36Mw4pPisd-bcc-owwQQ",
+      "onChain": true
+    },
+    "2": {
+      "name": "Buildoor #3",
+      "image_hash": "9d2362389a1d2e5d91b3e1fed4771251c9647614444a98df5f32a5dd84acb8e8",
+      "image_link": "https://arweave.net/da-WUHm62m712dxnRRF_L_IBmnlREf9EhcBRpAu3Klc?ext=png",
+      "metadata_hash": "80019ca22c291fa3c220350158d12ba2aaa758bae25c3150f37b207743335f98",
+      "metadata_link": "https://arweave.net/SQmU51_Ch4YkxnI5UHBTulFIs-cJhttwI-0PmpBTb3E",
+      "onChain": true
+    },
+    "3": {
+      "name": "Buildoor #4",
+      "image_hash": "80941660812d943b4cdb6ab5ee104f94dc5a7d9baacf6d91089a762dbbd26357",
+      "image_link": "https://arweave.net/ydb75tWGLMvnvQd2c9mmfTM7RFvX7JOWPn0wevbWMUE?ext=png",
+      "metadata_hash": "6e98e679414d53ad87eec5b820da0ff5d07d401fa39646eef667166ed697d0c3",
+      "metadata_link": "https://arweave.net/36VS2L9_oCqRlJv0GMyasGm56Zeu_xdLTsrunl34OAU",
+      "onChain": true
+    },
+    "4": {
+      "name": "Buildoor #5",
+      "image_hash": "35a6c4c815910ca59f70f0314cd7f3e7a4c5938c468afd051670102324454d8b",
+      "image_link": "https://arweave.net/WW9169oAL0f77gov0iYzkiLf9i9-UhQcjiXA9I-H8bw?ext=png",
+      "metadata_hash": "1bb7b9dd6082263d6b0702c5f3ad62e75ecb6d05feacbcbeb33c8e658d898449",
+      "metadata_link": "https://arweave.net/ETsdeMGTFQFbk9e3YVaigJFDQs1dmueqfLt6xHyA2Xw",
+      "onChain": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Buildoor #1",
+    "symbol": "BLDR",
+    "description": "Buildoors",
+    "image": "0.png",
+    "attributes": [
+        {
+            "trait_type": "accessory",
+            "value": "glasses"
+        },
+        {
+            "trait_type": "color",
+            "value": "green"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "0.png",
+                "type": "image/png"
+            }
+        ]
+    }
+}

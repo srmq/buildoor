@@ -1,0 +1,20 @@
+{
+    "name": "Buildoor #5",
+    "symbol": "BLDR",
+    "description": "Buildoors",
+    "image": "4.png",
+    "attributes": [
+        {
+            "trait_type": "color",
+            "value": "pink"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "4.png",
+                "type": "image/png"
+            }
+        ]
+    }
+}
