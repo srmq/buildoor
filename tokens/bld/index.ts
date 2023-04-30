@@ -22,13 +22,18 @@ const TOKEN_IMAGE_PATH = `tokens/bld/assets/${TOKEN_IMAGE_NAME}`;
 
 async function createBldToken(
     connection: web3.Connection,
-    payer: web3.Keypair
+    payer: web3.Keypair,
+    programId: web3.PublicKey
 ) {
+    const [mintAuth] = web3.PublicKey.findProgramAddressSync(
+        [Buffer.from("mint")],
+        programId
+    )    
     // This will create a token with all the necessary inputs
     const tokenMint = await token.createMint(
         connection, // Connection
         payer, // Payer
-        payer.publicKey, // Your wallet public key
+        payer.publicKey, // Your wallet public key (mint authority)
         payer.publicKey, // Freeze authority
         2 // Decimals
     );
@@ -93,6 +98,15 @@ async function createBldToken(
         [payer]
     )
 
+    await token.setAuthority(
+        connection,
+        payer,
+        tokenMint,
+        payer.publicKey,
+        token.AuthorityType.MintTokens,
+        mintAuth
+    )    
+
     fs.writeFileSync(
         "tokens/bld/cache.json",
         JSON.stringify({
@@ -110,7 +124,9 @@ async function main() {
     const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
     const payer = await initializeKeypair(connection);
 
-    await createBldToken(connection, payer);    
+    // this is the program at project solana-nft-staking-program
+    const mintAuthority = new web3.PublicKey("FwHyXonyRjm7fCVdeA8ymhpqRe7zu5rbEt14Zc4oXNWx")
+    await createBldToken(connection, payer, mintAuthority);    
 }
 
 main()
