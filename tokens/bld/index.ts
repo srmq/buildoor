@@ -19,6 +19,7 @@ const TOKEN_SYMBOL = "BLD";
 const TOKEN_DESCRIPTION = "A token for buildoors";
 const TOKEN_IMAGE_NAME = "BuildoorCoin512.png"; // Replace unicorn.png with your image name
 const TOKEN_IMAGE_PATH = `tokens/bld/assets/${TOKEN_IMAGE_NAME}`;
+console.log("TOKEN_IMAGE_PATH is ", TOKEN_IMAGE_PATH);
 
 async function createBldToken(
     connection: web3.Connection,
@@ -28,7 +29,8 @@ async function createBldToken(
     const [mintAuth] = web3.PublicKey.findProgramAddressSync(
         [Buffer.from("mint")],
         programId
-    )    
+    )
+    console.log("found program that will be mint authority")    
     // This will create a token with all the necessary inputs
     const tokenMint = await token.createMint(
         connection, // Connection
@@ -37,6 +39,7 @@ async function createBldToken(
         payer.publicKey, // Freeze authority
         2 // Decimals
     );
+    console.log("created token mint")    
 
     // Create a metaplex object so that we can create a metaplex metadata
     const metaplex = Metaplex.make(connection)
@@ -62,9 +65,11 @@ async function createBldToken(
             description: TOKEN_DESCRIPTION,
             image: imageUri,
         }, {commitment: "finalized"});
+        console.log("token metadata uploaded")    
 
     // Finding out the address where the metadata is stored
     const metadataPda = metaplex.nfts().pdas().metadata({ mint: tokenMint });
+    console.log("metadata pda found")    
     const tokenMetadata = {
         name: TOKEN_NAME,
         symbol: TOKEN_SYMBOL,
@@ -89,6 +94,7 @@ async function createBldToken(
             }
         })
 
+    console.log("CreateMetadataAccountV2Instruction created")
     const transaction = new web3.Transaction()
     transaction.add(instruction)
 
@@ -97,6 +103,7 @@ async function createBldToken(
         transaction,
         [payer]
     )
+    console.log("created metadata account for token")
 
     await token.setAuthority(
         connection,
@@ -124,8 +131,8 @@ async function main() {
     const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
     const payer = await initializeKeypair(connection);
 
-    // this is the program at project solana-nft-staking-program
-    const mintAuthority = new web3.PublicKey("FwHyXonyRjm7fCVdeA8ymhpqRe7zu5rbEt14Zc4oXNWx")
+    // this is the program at project anchor-nft-staking
+    const mintAuthority = new web3.PublicKey("9zezsu8xLYtPfAkWue3vB9NBTkFX2iMGpcetsDTnTLHy")
     await createBldToken(connection, payer, mintAuthority);    
 }
 
